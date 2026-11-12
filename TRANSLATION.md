@@ -13,7 +13,7 @@ There are four things that can be translated. They are independent of each other
 
 The app matters most. The other three are welcome too, but it's perfectly fine to translate only the app.
 
-Currently available: **German** (the original), **English**, **Italian** and **Spanish**.
+Currently available: **German** (the original), **English**, **Italian**, **Spanish** and **Russian**.
 
 ## Before you start
 
