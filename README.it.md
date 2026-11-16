@@ -15,7 +15,8 @@
   <a href="docs/features.it.md">Tutte le funzioni</a> ·
   <a href="https://discord.gg/SSr8VHh7EJ">Discord</a> ·
   <a href="README.md">English</a> ·
-  <a href="README.de.md">Deutsch</a>
+  <a href="README.de.md">Deutsch</a> ·
+  <a href="README.ru.md">Русский</a>
 </p>
 
 KizamuBeam ti accompagna dalla prima idea al pezzo finito in un’unica app: disegna e scrivi direttamente sull’area di lavoro, trasforma le foto in incisioni, genera scatole, ingranaggi e modelli a incastro, controlla tutto in 3D e invia il lavoro direttamente al tuo laser. Se hai già usato LightBurn, ti sentirai subito a casa.
@@ -70,7 +71,7 @@ Una libreria materiali conserva le impostazioni collaudate. Test del materiale, 
 Modelli con parametri, testo variabile e numeri di serie da CSV, codici QR e codici a barre, progetti su più pagine, dime per serie di pezzi grezzi, **Print and Cut** con segni di registro e una fotocamera per posizionare i disegni direttamente sul pezzo.
 
 ### Renderlo tuo
-Finestre agganciabili e barre degli strumenti personalizzabili, tema chiaro e scuro, interfaccia in italiano, inglese e tedesco. La Casella degli strumenti raccoglie tutti i generatori e gli strumenti speciali in un unico posto. Le estensioni aggiungono profili di dispositivo, modelli, materiali e motivi. Impostazioni, dispositivi e librerie si possono salvare o trasferire come file, oppure sincronizzare tra computer tramite una tua cartella (iCloud, Dropbox, Nextcloud). Agenti IA come Claude Code o Codex possono lavorare sul tuo progetto tramite il server MCP integrato, con il livello di accesso che scegli tu.
+Finestre agganciabili e barre degli strumenti personalizzabili, tema chiaro e scuro, interfaccia in italiano, inglese, tedesco e russo. La Casella degli strumenti raccoglie tutti i generatori e gli strumenti speciali in un unico posto. Le estensioni aggiungono profili di dispositivo, modelli, materiali e motivi. Impostazioni, dispositivi e librerie si possono salvare o trasferire come file, oppure sincronizzare tra computer tramite una tua cartella (iCloud, Dropbox, Nextcloud). Agenti IA come Claude Code o Codex possono lavorare sul tuo progetto tramite il server MCP integrato, con il livello di accesso che scegli tu.
 
 **→ [L’elenco completo delle funzioni](docs/features.it.md)**
 
