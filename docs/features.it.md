@@ -1,6 +1,6 @@
 # Funzioni di KizamuBeam
 
-[English](features.md) · [Deutsch](features.de.md) · Italiano · [Torna al README](../README.it.md)
+[English](features.md) · [Deutsch](features.de.md) · Italiano · [Русский](features.ru.md) · [Torna al README](../README.it.md)
 
 Tutto ciò che KizamuBeam sa fare, con percorsi dei menu e scorciatoie da tastiera. Per una panoramica veloce vedi il [README](../README.it.md) o il [sito web](https://negurvulkan.github.io/kizamubeam/it/). I nomi dei menu seguono l’interfaccia in italiano; dove la traduzione dell’interfaccia è ancora incompleta, possono apparire in inglese.
 
@@ -137,7 +137,7 @@ Test offline: `npm run test:camera`. I test non usano alcun hardware.
 - Progetti su più pagine: un progetto ha una o più pagine (in cima alla finestra Oggetti, menu Pagine, Pag↑/Pag↓ per cambiare). Ogni pagina ha i propri oggetti; le impostazioni di taglio valgono per l’intero progetto. Disegno, modifica, incisione ed esportazione (SVG, DXF, G-code) lavorano sulla pagina corrente; l’esportazione PDF e AI contiene tutte le pagine. Le pagine si possono aggiungere, duplicare, rinominare (doppio clic), eliminare e riordinare trascinandole; trascina oggetti su una riga di pagina per spostarli lì. Formato di file da `version: 2` con `pages` e `page`; i file più vecchi si aprono come progetto con una pagina. MCP: `get_document` (con `pages`), `switch_page`, `edit_pages`, `move_to_page`.
 - Note del progetto (Finestra → Note): testo libero su **materiale** (tipo, spessore, provenienza), **preparazione** (fuoco, piano, origine, come è fissato il pezzo) e **lavorazione** (ordine, passate, finitura, cosa cambiare la prossima volta). Le note sono salvate nel file di progetto (`.kzb`, voce `notes`) e nei modelli, ogni modifica è un passo di annullamento. MCP: `project_notes`, anche in `get_document`.
 - Finestra Cronologia (scheda accanto a Oggetti, menu Finestra): le ultime modifiche (fino a 200) come elenco con nomi come “Sposta”, “Offset” o “Modifica testo” e l’ora. Un clic su una riga salta lì, più passi indietro o avanti in una volta; i passi annullati sono mostrati in grigio sotto lo stato attuale e si possono ripetere con un clic finché una nuova modifica non li scarta. Ctrl+Z / Ctrl+Y (o Ctrl+Maiusc+Z) procedono ancora un passo alla volta. Ogni chiamata MCP appare come un passo con il nome del suo strumento.
-- Interfaccia in tedesco, inglese e italiano (Visualizza → Lingua). Il valore predefinito segue la lingua del sistema (le altre lingue di sistema ricevono l’inglese), la scelta viene ricordata; i termini inglesi sono quelli che gli utenti di laser già conoscono. I testi non ancora tradotti in italiano appaiono in inglese.
+- Interfaccia in tedesco, inglese, italiano e russo (Visualizza → Lingua). Il valore predefinito segue la lingua del sistema (le altre lingue di sistema ricevono l’inglese), la scelta viene ricordata; i termini inglesi sono quelli che gli utenti di laser già conoscono. I testi non ancora tradotti in italiano appaiono in inglese.
 - Tema chiaro e scuro (Visualizza → Tema, o il pulsante all’estrema destra della barra); il valore predefinito segue il sistema. Nel tema scuro i colori dei livelli molto scuri vengono schiariti sull’area di lavoro.
 
 ## Importazione, immagini e ricalco
