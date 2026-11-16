@@ -13,16 +13,16 @@ buttons keep linking to the Releases page (for the VM: filtered to `vm-v`).
 | Path | What it is |
 |---|---|
 | `template.html` | The one page template (`{{key}}`, `{{raw:key}}`, `{{svg:name}}`, `{{#each list}}…{{/each}}`) |
-| `i18n/de.json`, `i18n/en.json`, `i18n/it.json` | All texts. German is the default (`/`), English lives at `/en/`, Italian at `/it/` |
+| `i18n/de.json`, `i18n/en.json`, `i18n/it.json`, `i18n/ru.json` | All texts. German is the default (`/`), English lives at `/en/`, Italian at `/it/`, Russian at `/ru/` |
 | `build.mjs` | Zero-dependency Node script that renders the template into the pages below |
-| `index.html`, `en/index.html`, `it/index.html`, `404.html` | **Generated** – do not edit by hand, but do commit them |
+| `index.html`, `en/index.html`, `it/index.html`, `ru/index.html`, `404.html` | **Generated** – do not edit by hand, but do commit them |
 | `styles.css`, `main.js` | Styles (light/dark via `prefers-color-scheme`) and progressive enhancement |
 | `assets/` | Logos, favicons, OG image, screenshots (WebP, light/dark pairs) |
 | `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.nojekyll` | Static extras |
 
 ## Editing texts
 
-1. Change the strings in `i18n/de.json`, `i18n/en.json` and `i18n/it.json` (keep the keys in sync).
+1. Change the strings in `i18n/de.json`, `i18n/en.json`, `i18n/it.json` and `i18n/ru.json` (keep the keys in sync).
    A new language needs its JSON file and an entry in `LANGS` in `build.mjs` (plus `sitemap.xml`).
    Layout changes go into `template.html`.
 2. Rebuild: `node website/build.mjs` (Node 18+).
@@ -43,8 +43,8 @@ python3 -m http.server -d website 8000
 ```
 
 The German page redirects first-time visitors whose browser language is Italian
-to `/it/` and any other non-German language to `/en/`. Choosing a language with the
-language switch is remembered (`localStorage`
+to `/it/`, Russian to `/ru/` and any other non-German language to `/en/`. Choosing
+a language with the language switch is remembered (`localStorage`
 key `kb-lang`) and always wins. To test the redirect again, clear that key.
 
 ## Deployment

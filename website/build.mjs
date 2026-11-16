@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Builds website/index.html (DE), website/en/index.html (EN) and
-// website/it/index.html (IT) from
+// Builds website/index.html (DE), website/en/index.html (EN),
+// website/it/index.html (IT) and website/ru/index.html (RU) from
 // template.html + i18n/*.json. Zero dependencies: `node website/build.mjs`.
 // The generated HTML is committed so GitHub Pages can serve it as-is.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -89,16 +89,17 @@ const withVersion = (v, version) =>
         : v;
 
 // Runs inline in <head> of the German root page only. First-time visitors
-// whose browser language is Italian go to /it/, any other non-German language
-// goes to /en/. Any explicit choice made with the language switch is stored
-// and always wins. Crawlers are left alone.
-const REDIRECT = `<script>(function(){try{var s=localStorage.getItem('kb-lang');if(s)return;if(/bot|crawl|spider|slurp|preview/i.test(navigator.userAgent))return;var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();if(!l||l.indexOf('de')===0)return;location.replace((l.indexOf('it')===0?'it/':'en/')+location.hash);}catch(e){}})();</script>`;
+// whose browser language is Italian or Russian go to /it/ or /ru/, any other
+// non-German language goes to /en/. Any explicit choice made with the language
+// switch is stored and always wins. Crawlers are left alone.
+const REDIRECT = `<script>(function(){try{var s=localStorage.getItem('kb-lang');if(s)return;if(/bot|crawl|spider|slurp|preview/i.test(navigator.userAgent))return;var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();if(!l||l.indexOf('de')===0)return;location.replace((l.indexOf('it')===0?'it/':l.indexOf('ru')===0?'ru/':'en/')+location.hash);}catch(e){}})();</script>`;
 
 // Every language of the site: code, name in its own language, path below SITE.
 const LANGS = [
   { code: 'de', name: 'Deutsch', path: '' },
   { code: 'en', name: 'English', path: 'en/' },
   { code: 'it', name: 'Italiano', path: 'it/' },
+  { code: 'ru', name: 'Русский', path: 'ru/' },
 ];
 
 const pages = LANGS.map((l) => ({
@@ -168,6 +169,7 @@ for (const p of pages) {
   const de = load('de');
   const en = load('en');
   const it = load('it');
+  const ru = load('ru');
   const html = `<!doctype html>
 <html lang="de">
 <head>
@@ -196,7 +198,8 @@ a{color:var(--link);font-weight:600}a:focus-visible{outline:2px solid #ff5600;ou
 <p>${esc(de.notfound.text)}</p>
 <div lang="en"><h2 style="font-size:1.5rem;margin:1.25rem 0 .25rem">${esc(en.notfound.title)}</h2><p>${esc(en.notfound.text)}</p></div>
 <div lang="it"><h2 style="font-size:1.5rem;margin:1.25rem 0 .25rem">${esc(it.notfound.title)}</h2><p>${esc(it.notfound.text)}</p></div>
-<p class="links"><a href="${SITE}">${esc(de.notfound.home)}</a><a href="${SITE}en/" lang="en" hreflang="en">${esc(en.notfound.home)}</a><a href="${SITE}it/" lang="it" hreflang="it">${esc(it.notfound.home)}</a></p>
+<div lang="ru"><h2 style="font-size:1.5rem;margin:1.25rem 0 .25rem">${esc(ru.notfound.title)}</h2><p>${esc(ru.notfound.text)}</p></div>
+<p class="links"><a href="${SITE}">${esc(de.notfound.home)}</a><a href="${SITE}en/" lang="en" hreflang="en">${esc(en.notfound.home)}</a><a href="${SITE}it/" lang="it" hreflang="it">${esc(it.notfound.home)}</a><a href="${SITE}ru/" lang="ru" hreflang="ru">${esc(ru.notfound.home)}</a></p>
 </main>
 </body>
 </html>
